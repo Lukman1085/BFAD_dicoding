@@ -49,7 +49,13 @@ def create_rfm_df(df):
 # Load data dengan st.cache_data agar lebih cepat
 @st.cache_data
 def load_data():
-    df = pd.read_csv("dashboard/main_data.csv")
+    # Mengambil direktori tempat dashboard.py berada
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Menggabungkan direktori tersebut dengan nama file CSV
+    csv_path = os.path.join(current_dir, "main_data.csv")
+    
+    df = pd.read_csv(csv_path)
     df['order_purchase_timestamp'] = pd.to_datetime(df['order_purchase_timestamp'])
     return df
 
