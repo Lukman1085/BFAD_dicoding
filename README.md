@@ -25,3 +25,23 @@ Direktori ini berisi kumpulan raw data (data mentah) dalam format CSV:
 - **`products_dataset.csv`**: Berisi metadata katalog produk seperti kategori produk, panjang nama, panjang deskripsi, jumlah foto, berat, dan dimensi produk.
 - **`sellers_dataset.csv`**: Berisi informasi demografi penjual yang bermitra dengan e-commerce, mencakup ID penjual, kode pos, kota, dan negara bagian asal.
 - **`product_category_name_translation.csv`**: Tabel kamus sederhana untuk menerjemahkan nama kategori produk dari bahasa Portugis ke bahasa Inggris.
+
+## Setup Environment
+
+### Menggunakan Built-in Python venv
+```bash
+python -m venv .venv
+.venv\Scripts\activate      # Untuk Windows
+source .venv/bin/activate   # Untuk Mac/Linux
+pip install -r requirements.txt
+```
+
+### Menggunakan Anaconda
+```bash
+conda create --name main-ds python=3.9
+conda activate main-ds
+pip install -r requirements.txt
+```
+
+## Run Dashboard
+streamlit run dashboard/dashboard.py
